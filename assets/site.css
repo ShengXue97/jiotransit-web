@@ -25,7 +25,7 @@
 }
 
 *{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%;overflow-y:scroll;scrollbar-gutter:stable}
+html{background:var(--bg);-webkit-text-size-adjust:100%;overflow-y:scroll;scrollbar-gutter:stable}
 body{margin:0;background:var(--bg);color:var(--text);
   font:500 17px/1.6 "Jakarta",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
   -webkit-font-smoothing:antialiased;min-height:100vh;display:flex;flex-direction:column}
@@ -36,6 +36,12 @@ a{color:var(--accent-text)}
 h1,h2,h3{text-wrap:balance}
 p{text-wrap:pretty}
 .wrap{max-width:var(--max);margin:0 auto;padding:0 var(--gutter)}
+
+/* ---------- page switches: header stays put, content crossfades ---------- */
+@view-transition{navigation:auto}
+.site-header{view-transition-name:site-header}
+::view-transition-old(root),::view-transition-new(root){animation-duration:.16s}
+@media (prefers-reduced-motion:reduce){ ::view-transition-group(*),::view-transition-old(*),::view-transition-new(*){animation:none} }
 
 /* ---------- header: identical on every page ---------- */
 .site-header .wrap{display:flex;align-items:center;gap:16px;height:68px}
