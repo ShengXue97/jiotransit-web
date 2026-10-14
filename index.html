@@ -2,79 +2,92 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>JioTransit: Singapore bus arrivals and get-off alerts</title>
-<meta name="description" content="Live Singapore bus arrivals, MRT routes, directions and alerts that buzz before your stop. Join the free beta on iPhone and Android.">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#F5F5F7" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0F1320" media="(prefers-color-scheme: dark)">
+<title>JioTransit: Singapore bus timings and get-off alerts</title>
+<meta name="description" content="Live bus timings, MRT routes, and an alert before your stop. Free beta for iPhone and Android, no sign-up.">
 <meta property="og:title" content="JioTransit: never miss your stop again">
-<meta property="og:description" content="Live SG bus arrivals, MRT routes and get-off alerts. Join the free beta.">
+<meta property="og:description" content="Live bus timings, MRT routes, and an alert before your stop. Free beta for iPhone and Android, no sign-up.">
 <meta property="og:image" content="https://shengxue97.github.io/jiotransit-web/assets/getoff.jpg">
 <meta property="og:url" content="https://shengxue97.github.io/jiotransit-web/">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="assets/favicon.png">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="preload" href="assets/fonts/jakarta-800.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/site.css">
 </head>
 <body>
-<div class="wrap">
-  <header class="top">
-    <img src="assets/icon.png" alt="">
-    <b>JioTransit</b>
-    <nav><a href="beta/">Beta</a><a href="support/" class="hide-sm">Support</a><a href="privacy/" class="hide-sm">Privacy</a></nav>
-  </header>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="./"><img src="assets/icon.png" width="34" height="34" alt=""><span>JioTransit</span></a>
+    <nav class="site-nav" aria-label="Site"><a href="beta/">Beta</a><a href="support/">Support</a><a href="privacy/">Privacy</a></nav>
+  </div>
+</header>
 
+<main class="wrap">
   <section class="hero">
     <div>
-      <span class="badge">Free beta in Singapore</span>
-      <h1>Never miss your bus stop again.</h1>
-      <p>Live bus arrivals, MRT routes and door-to-door directions, plus an alert that buzzes before your stop, even with your phone locked.</p>
-      <div class="btns">
-        <a class="btn btn-primary" href="beta/">Join the beta</a>
-        <a class="btn btn-ghost" href="#features">See how it works</a>
+      <h1>Never miss your stop again.</h1>
+      <p class="lede">Live bus timings, MRT routes, and an alert before your stop, even with your phone locked. Free, no sign-up.</p>
+      <div class="actions">
+        <a class="btn btn-accent" href="beta/">Join the free beta</a>
+        <span class="note">On iPhone and Android</span>
       </div>
     </div>
-    <img class="shot" src="assets/journey.webp" width="540" height="1173" alt="JioTransit following a ride on Bus 29 with 4 stops left">
-  </section>
-
-  <section class="features" id="features">
-    <div class="feature">
-      <h2>Your next bus, at a glance</h2>
-      <p>Nearby stops with live arrival times. Star your usual stops so they're always on top.</p>
-      <img src="assets/arrivals.webp" width="540" height="1173" loading="lazy" alt="Nearby bus stops with live arrival times">
-    </div>
-    <div class="feature">
-      <h2>Know where to get off</h2>
-      <p>Pick your stop and JioTransit follows the ride, counting down the stops until it's time.</p>
-      <img src="assets/journey.webp" width="540" height="1173" loading="lazy" alt="A ride in progress with stops left and time left">
-    </div>
-    <div class="feature">
-      <h2>See every stop</h2>
-      <p>The whole route on a map, with nearby stops and MRT exits, so you always know where you are.</p>
-      <img src="assets/route.webp" width="540" height="1173" loading="lazy" alt="A bus route drawn on the Singapore map">
+    <div class="hero-visual">
+      <img class="shot" src="assets/journey.webp" width="540" height="1173" alt="JioTransit following a ride on Bus 29, with 4 stops left">
+      <img class="widget" src="assets/getoff.webp" width="900" height="337" alt="Lock screen: get off at Changi Village Ter, 4 stops left">
     </div>
   </section>
 
-  <section class="getoff">
+  <section class="feature">
     <div>
-      <h2>It buzzes before your stop.</h2>
-      <p>Doze off, scroll, chat. Your lock screen shows the stops left, and your phone alerts you in time to get off.</p>
+      <h2>Bus timings, to the second</h2>
+      <p>Open the app and your nearby stops are already there, with every bus counting down.</p>
+      <ul class="facts">
+        <li>How full each bus is</li>
+        <li>Double-decker and wheelchair access</li>
+        <li>Your favourite buses first</li>
+      </ul>
     </div>
-    <img src="assets/getoff.webp" width="820" height="310" alt="Lock screen alert: Bus 29, get off at Changi Village Ter, 4 stops left">
+    <figure><img class="shot" src="assets/arrivals.webp" width="540" height="1173" loading="lazy" alt="Nearby bus stops with live arrival times"></figure>
   </section>
 
-  <section class="hero" style="grid-template-columns:1fr;text-align:center">
+  <section class="feature flip">
     <div>
-      <h1 style="font-size:clamp(28px,4vw,40px)">Try it before everyone else.</h1>
-      <p style="margin:0 auto 22px">JioTransit is in beta on iPhone and Android. It's free, and your feedback shapes the app.</p>
-      <div class="btns" style="justify-content:center"><a class="btn btn-primary" href="beta/">Join the beta</a></div>
+      <h2>Ride without watching every stop</h2>
+      <p>Pick where you're getting off and put your phone away. JioTransit follows your bus on the map and alerts you before your stop, on the lock screen, the Dynamic Island or an Android notification.</p>
     </div>
+    <figure><img class="shot" src="assets/route.webp" width="540" height="1173" loading="lazy" alt="A bus route on the Singapore map with your stop marked"></figure>
   </section>
 
-  <footer>
-    <span>© 2026 Sim Sheng Xue · NimShade</span>
-    <a href="support/">Support</a>
-    <a href="privacy/">Privacy policy</a>
-    <a href="mailto:xuecoding@gmail.com">xuecoding@gmail.com</a>
-  </footer>
-</div>
+  <section class="extras">
+    <h2>Also in JioTransit</h2>
+    <ul>
+      <li><b>Home screen widgets</b><span>Your usual stop's buses without opening the app.</span></li>
+      <li><b>Bus and MRT directions</b><span>Door to door, with the times to leave.</span></li>
+      <li><b>MRT and LRT map</b><span>The whole system, even offline.</span></li>
+      <li><b>Search anything</b><span>Stop codes, roads, bus numbers, landmarks. "Bt Batok" works too.</span></li>
+      <li><b>Timetables</b><span>First and last buses, and how often they come.</span></li>
+      <li><b>Four languages</b><span>English, 中文, Bahasa Melayu and தமிழ்.</span></li>
+    </ul>
+  </section>
+
+  <section class="cta">
+    <div>
+      <h2>Try it before it launches.</h2>
+      <p>The beta is free on iPhone and Android.</p>
+    </div>
+    <a class="btn btn-accent" href="beta/">Join the free beta</a>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="links"><a href="beta/">Beta</a><a href="support/">Support</a><a href="privacy/">Privacy</a><a href="mailto:xuecoding@gmail.com">xuecoding@gmail.com</a></div>
+    <p>JioTransit is made in Singapore by Sim Sheng Xue (NimShade). Bus times come from LTA DataMall; JioTransit is independent and not affiliated with LTA.</p>
+  </div>
+</footer>
 </body>
 </html>

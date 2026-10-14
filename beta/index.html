@@ -8,21 +8,28 @@
 <title>Try the JioTransit beta</title>
 <meta name="description" content="Live bus timings, MRT routes, and an alert before your stop. Free beta for iPhone and Android, no sign-up.">
 <meta property="og:title" content="Try the JioTransit beta">
-<meta property="og:description" content="Live bus timings, MRT routes, and an alert before your stop. Free beta, no sign-up.">
+<meta property="og:description" content="Live bus timings, MRT routes, and an alert before your stop. Free beta for iPhone and Android, no sign-up.">
 <meta property="og:image" content="https://shengxue97.github.io/jiotransit-web/assets/getoff.jpg">
 <meta property="og:url" content="https://shengxue97.github.io/jiotransit-web/beta/">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="../assets/favicon.png">
 <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
 <link rel="preload" href="../assets/fonts/jakarta-800.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="../assets/beta.css">
+<link rel="stylesheet" href="../assets/site.css">
 </head>
 <body>
-<main class="page">
-  <a class="brand" href="../"><img src="../assets/icon.png" alt=""><b>JioTransit</b> <span class="plate">Beta</span></a>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../"><img src="../assets/icon.png" width="34" height="34" alt=""><span>JioTransit</span></a>
+    <nav class="site-nav" aria-label="Site"><a href="../beta/" aria-current="page">Beta</a><a href="../support/">Support</a><a href="../privacy/">Privacy</a></nav>
+  </div>
+</header>
 
-  <h1>Never miss your stop again.</h1>
-  <p class="lede">Live bus timings, MRT routes, and an alert before your stop. Free beta, no sign-up.</p>
+<main class="wrap">
+  <section class="beta-intro">
+    <h1>Never miss your stop again.</h1>
+    <p>Live bus timings, MRT routes, and an alert before your stop. Free beta, no sign-up.</p>
+  </section>
 
   <div class="segments" role="tablist" aria-label="Your phone">
     <button role="tab" id="tab-ios" aria-controls="ios" aria-selected="true">iPhone</button>
@@ -85,11 +92,14 @@
       </li>
     </ol>
   </section>
-
-
-  <p class="foot">Something broken or confusing? Email <a href="mailto:xuecoding@gmail.com">xuecoding@gmail.com</a>.</p>
 </main>
 
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="links"><a href="../beta/">Beta</a><a href="../support/">Support</a><a href="../privacy/">Privacy</a><a href="mailto:xuecoding@gmail.com">xuecoding@gmail.com</a></div>
+    <p>JioTransit is made in Singapore by Sim Sheng Xue (NimShade). Bus times come from LTA DataMall; JioTransit is independent and not affiliated with LTA.</p>
+  </div>
+</footer>
 <script>
 (function () {
   var tabs = document.querySelectorAll('[role="tab"]');
