@@ -37,7 +37,7 @@ a{color:var(--accent-text)}
 .plate{display:inline-block;background:var(--plate);color:var(--on-plate);font-weight:800;font-size:14px;line-height:1;padding:6px 8px;border-radius:6px}
 
 h1{font-weight:800;font-size:34px;line-height:1.08;letter-spacing:-.025em;margin:28px 0 8px}
-.lede{color:var(--text-2);margin:0 0 22px;font-size:17px}
+.lede{color:var(--text-2);margin:0 0 22px;font-size:17px;text-wrap:balance}
 
 /* the app's Segments switch */
 .segments{display:grid;grid-template-columns:1fr 1fr;background:var(--muted);border-radius:12px;padding:4px;gap:4px}
@@ -57,7 +57,7 @@ h1{font-weight:800;font-size:34px;line-height:1.08;letter-spacing:-.025em;margin
 .stop.end .dot{background:var(--accent);display:grid;place-items:center}
 .stop.end .dot svg{width:11px;height:11px;color:var(--on-accent)}
 .stop h2{font-size:18px;font-weight:700;line-height:1.3;margin:0}
-.stop p{color:var(--text-2);margin:2px 0 12px;font-size:15px}
+.stop p{color:var(--text-2);margin:2px 0 12px;font-size:15px;text-wrap:pretty}
 .stop.end p{margin-bottom:0}
 
 .btn{display:flex;align-items:center;justify-content:center;width:100%;min-height:52px;padding:12px 18px;
@@ -71,31 +71,30 @@ h1{font-weight:800;font-size:34px;line-height:1.08;letter-spacing:-.025em;margin
 .foot{color:var(--text-2);font-size:15px;margin:22px 2px 0}
 .foot a{color:var(--text)}
 
-@media (min-width:700px){
-  .page{padding-top:48px}
-  h1{font-size:42px}
-}
+/* the QR stop only exists for computer visitors */
+.stop.qr{display:none}
+.qr-img{width:132px;height:132px;background:#fff;padding:8px;border-radius:12px;border:1px solid var(--divider)}
 
-/* tablets: one column, with the app preview under the steps */
-.side{display:none}
-.qr-card{display:none}
-@media (min-width:700px){
-  .page{max-width:560px}
-  .side{display:block;margin-top:28px}
-  .preview{margin:0;background:var(--plate);border-radius:16px;padding:20px}
-  .preview img{width:100%;height:auto;display:block;border-radius:12px}
-  .preview figcaption{color:#C9D0E2;font-size:15px;margin-top:12px}
+/* tablets and desktops: the trip runs across the page, like the app's progress rail */
+@media (min-width:760px){
+  .page{max-width:1040px;padding:48px 40px 48px}
+  h1{font-size:52px;margin:44px 0 10px}
+  .lede{font-size:20px;max-width:34em;margin-bottom:32px}
+  .segments{width:360px}
+  .trip{padding:32px 28px 28px;margin-top:16px}
+
+  .stops{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(0,1fr);column-gap:28px}
+  .stop{padding:40px 0 0;display:flex;flex-direction:column}
+  .stop::before{left:22px;right:-28px;top:9px;bottom:auto;width:auto;height:3px}
+  .dot{top:0}
+  .stop h2{font-size:19px}
+  .stop p{flex:1;margin-bottom:16px}
+  .stop .btn{margin-top:auto}
+  .stop.end p{flex:none}
+  .hint{margin:24px 0 0}
+  .foot{margin-top:28px}
 }
-/* desktops: steps on the left, QR and preview on the right */
-@media (min-width:960px){
-  .page{max-width:1000px;padding-left:32px;padding-right:32px}
-  .layout{display:grid;grid-template-columns:minmax(0,440px) minmax(0,1fr);gap:48px;align-items:start}
-  .side{position:sticky;top:32px;margin-top:28px}
+@media (min-width:760px) and (hover:hover) and (pointer:fine){
+  .stop.qr{display:flex}
+  .stop.qr .qr-img{margin-top:auto}
 }
-@media (min-width:960px) and (hover:hover) and (pointer:fine){
-  .qr-card{display:flex;gap:18px;align-items:center;background:var(--surface);border-radius:16px;padding:18px;margin-bottom:16px}
-  .qr-card img{width:112px;height:112px;flex:none;background:#fff;padding:8px;border-radius:10px}
-  .qr-card h2{font-size:18px;font-weight:700;margin:0 0 4px}
-  .qr-card p{margin:0;color:var(--text-2);font-size:15px}
-}
-@media (prefers-color-scheme:dark){ .preview{background:var(--surface)} }
