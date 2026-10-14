@@ -1,12 +1,16 @@
+@font-face{font-family:"Jakarta";src:url("fonts/jakarta-500.woff2") format("woff2");font-weight:500;font-display:swap}
+@font-face{font-family:"Jakarta";src:url("fonts/jakarta-700.woff2") format("woff2");font-weight:700;font-display:swap}
+@font-face{font-family:"Jakarta";src:url("fonts/jakarta-800.woff2") format("woff2");font-weight:800;font-display:swap}
+/* JioTransit app tokens (lib/core/theme/app_colors.dart) */
 :root{
-  --navy:#222c4a;--navy-2:#2c3760;--ink:#1d2540;--muted:#5d6680;
-  --coral:#f0705a;--coral-ink:#c4452f;--amber:#ffae1f;
-  --bg:#f6f4f1;--card:#ffffff;--line:#e6e2dc;
-  --radius:20px;
+  --navy:#1C2A4D;--navy-2:#26365f;--ink:#1A2033;--muted:#6D717D;
+  --coral:#E0604A;--coral-ink:#B9432E;--amber:#D89A00;
+  --bg:#F5F5F7;--card:#FFFFFF;--line:#E1E3E8;
+  --radius:16px;
 }
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+body{margin:0;background:var(--bg);color:var(--ink);font:500 17px/1.6 "Jakarta",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
 a{color:var(--coral-ink)}
 img{max-width:100%;height:auto;display:block}
 .wrap{max-width:1040px;margin:0 auto;padding:0 20px}
@@ -25,13 +29,13 @@ img{max-width:100%;height:auto;display:block}
 .hero h1 em{font-style:normal;color:var(--coral)}
 .hero p{color:#c9cfe2;font-size:19px;margin:0 0 26px;max-width:30em}
 .hero .shot{border-radius:22px;max-height:520px;width:auto;justify-self:center;box-shadow:0 24px 60px rgba(0,0,0,.35)}
-.badge{display:inline-block;background:rgba(255,174,31,.16);color:var(--amber);font-weight:600;font-size:14px;padding:5px 12px;border-radius:999px;margin-bottom:18px}
+.badge{display:inline-block;background:rgba(255,255,255,.12);color:#fff;font-weight:600;font-size:14px;padding:5px 12px;border-radius:999px;margin-bottom:18px}
 
 /* buttons */
 .btns{display:flex;flex-wrap:wrap;gap:12px}
 .btn{display:inline-flex;align-items:center;gap:10px;padding:14px 22px;border-radius:14px;font-weight:650;font-size:17px;text-decoration:none;border:0;cursor:pointer}
 .btn-primary{background:var(--coral);color:#fff}
-.btn-primary:hover{background:#e3604a}
+.btn-primary:hover{background:#cf5640}
 .btn-ghost{background:rgba(255,255,255,.1);color:#fff}
 .btn-ghost:hover{background:rgba(255,255,255,.18)}
 .btn svg{width:20px;height:20px;flex:none}
