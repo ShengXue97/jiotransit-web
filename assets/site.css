@@ -46,7 +46,11 @@ p{text-wrap:pretty}
 .site-nav a{color:var(--text-2);text-decoration:none;font-weight:700;font-size:15px;padding:8px 10px;border-radius:10px}
 .site-nav a:hover{color:var(--text);background:var(--muted)}
 .site-nav a[aria-current="page"]{color:var(--text);background:var(--muted)}
-@media (max-width:399px){ .brand span{display:none} .site-nav a{padding:8px 8px} }
+.brand{min-width:0;flex:none}
+.site-nav{flex:none}
+/* phones: the four links need the room, so the logo stands alone */
+@media (max-width:519px){ .brand span{display:none} .site-header .wrap{gap:8px} }
+@media (max-width:359px){ .site-nav{gap:0} .site-nav a{padding:8px 7px;font-size:14px} }
 
 /* ---------- footer: identical on every page ---------- */
 .site-footer{margin-top:72px;border-top:1px solid var(--divider);padding:28px 0 40px;color:var(--text-2);font-size:15px}
