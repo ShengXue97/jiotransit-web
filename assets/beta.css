@@ -75,3 +75,27 @@ h1{font-weight:800;font-size:34px;line-height:1.08;letter-spacing:-.025em;margin
   .page{padding-top:48px}
   h1{font-size:42px}
 }
+
+/* tablets: one column, with the app preview under the steps */
+.side{display:none}
+.qr-card{display:none}
+@media (min-width:700px){
+  .page{max-width:560px}
+  .side{display:block;margin-top:28px}
+  .preview{margin:0;background:var(--plate);border-radius:16px;padding:20px}
+  .preview img{width:100%;height:auto;display:block;border-radius:12px}
+  .preview figcaption{color:#C9D0E2;font-size:15px;margin-top:12px}
+}
+/* desktops: steps on the left, QR and preview on the right */
+@media (min-width:960px){
+  .page{max-width:1000px;padding-left:32px;padding-right:32px}
+  .layout{display:grid;grid-template-columns:minmax(0,440px) minmax(0,1fr);gap:48px;align-items:start}
+  .side{position:sticky;top:32px;margin-top:28px}
+}
+@media (min-width:960px) and (hover:hover) and (pointer:fine){
+  .qr-card{display:flex;gap:18px;align-items:center;background:var(--surface);border-radius:16px;padding:18px;margin-bottom:16px}
+  .qr-card img{width:112px;height:112px;flex:none;background:#fff;padding:8px;border-radius:10px}
+  .qr-card h2{font-size:18px;font-weight:700;margin:0 0 4px}
+  .qr-card p{margin:0;color:var(--text-2);font-size:15px}
+}
+@media (prefers-color-scheme:dark){ .preview{background:var(--surface)} }
