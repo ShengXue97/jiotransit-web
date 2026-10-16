@@ -191,11 +191,11 @@ p{text-wrap:pretty}
 /* =========================================================
    TEXT PAGES (support, privacy)
    ========================================================= */
-/* One reading column on the left, in line with the logo like every other page. */
+/* Text runs the full 1120px row, like every other page. */
 .doc{padding-top:28px}
 .doc-head h1{font-weight:800;font-size:clamp(32px,6vw,48px);line-height:1.08;letter-spacing:-.03em;margin:0 0 8px}
 .doc .updated{color:var(--text-2);margin:0 0 28px;font-size:15px}
-.doc-body{max-width:68ch}
+.doc-body{max-width:none}
 .doc h2{font-weight:800;font-size:22px;letter-spacing:-.01em;margin:40px 0 8px;scroll-margin-top:24px}
 .doc p{margin:0 0 14px}
 .doc strong{font-weight:700}
