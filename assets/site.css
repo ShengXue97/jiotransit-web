@@ -191,10 +191,25 @@ p{text-wrap:pretty}
 /* =========================================================
    TEXT PAGES (support, privacy)
    ========================================================= */
-.doc{max-width:720px;padding-top:28px}
-.doc h1{font-weight:800;font-size:clamp(32px,6vw,48px);line-height:1.08;letter-spacing:-.03em;margin:0 0 8px}
+/* One reading column on the left, in line with the logo like every other page; from 960px
+   an "On this page" list fills the rest of the 1120px row and stays in view while reading. */
+.doc{padding-top:28px}
+.doc-head h1{font-weight:800;font-size:clamp(32px,6vw,48px);line-height:1.08;letter-spacing:-.03em;margin:0 0 8px}
 .doc .updated{color:var(--text-2);margin:0 0 28px;font-size:15px}
-.doc h2{font-weight:800;font-size:22px;letter-spacing:-.01em;margin:40px 0 8px}
+.doc-body{max-width:68ch}
+.doc h2{font-weight:800;font-size:22px;letter-spacing:-.01em;margin:40px 0 8px;scroll-margin-top:24px}
 .doc p{margin:0 0 14px}
 .doc strong{font-weight:700}
-@media (min-width:720px){ .doc{padding-top:48px} }
+.doc-toc{display:none}
+@media (min-width:720px){ .doc{padding-top:48px} .doc .updated{margin-bottom:36px} }
+@media (min-width:960px){
+  .doc{display:grid;grid-template-columns:minmax(0,68ch) minmax(180px,240px);justify-content:space-between;column-gap:56px}
+  .doc-head{grid-column:1/-1}
+  .doc-body{grid-column:1;grid-row:2}
+  .doc-toc{display:block;grid-column:2;grid-row:2;position:sticky;top:24px;align-self:start;
+    border-left:1px solid var(--divider);padding-left:20px;font-size:15px}
+  .doc-toc p{font-weight:700;color:var(--text);margin:0 0 8px}
+  .doc-toc ol{list-style:none;margin:0;padding:0;display:grid;gap:2px}
+  .doc-toc a{display:block;color:var(--text-2);text-decoration:none;line-height:1.4;padding:5px 0}
+  .doc-toc a:hover{color:var(--text)}
+}

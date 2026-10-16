@@ -20,6 +20,8 @@
     if (!a || a.target || a.hasAttribute("download")) return false;
     var u = new URL(a.href, location.href);
     if (u.origin !== location.origin) return false;
+    // A link to a heading on this page: let the browser scroll to it.
+    if (u.hash && clean(u.href) === clean(location.href)) return false;
     if (!/\/$|\/index\.html$/.test(u.pathname)) return false;
     return !!document.querySelector('.site-nav a[href]') &&
       [].some.call(document.querySelectorAll(".site-nav a"), function (n) { return clean(n.href) === clean(u.href); });
