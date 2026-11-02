@@ -1,8 +1,10 @@
 /* JioTransit website: one stylesheet for every page.
-   Colours are the app's own (lib/core/theme/app_colors.dart); type is the app's font. */
-@font-face{font-family:"Jakarta";src:url("fonts/jakarta-500.woff2") format("woff2");font-weight:500;font-display:swap}
-@font-face{font-family:"Jakarta";src:url("fonts/jakarta-700.woff2") format("woff2");font-weight:700;font-display:swap}
-@font-face{font-family:"Jakarta";src:url("fonts/jakarta-800.woff2") format("woff2");font-weight:800;font-display:swap}
+   Colours are the app's own (lib/core/theme/app_colors.dart); type is the app's font.
+   The fonts are small and preloaded: "block" waits for them rather than drawing a
+   fallback font first and re-wrapping every line when they arrive (a visible jump). */
+@font-face{font-family:"Jakarta";src:url("fonts/jakarta-500.woff2") format("woff2");font-weight:500;font-display:block}
+@font-face{font-family:"Jakarta";src:url("fonts/jakarta-700.woff2") format("woff2");font-weight:700;font-display:block}
+@font-face{font-family:"Jakarta";src:url("fonts/jakarta-800.woff2") format("woff2");font-weight:800;font-display:block}
 
 :root{
   --bg:#F5F5F7;--surface:#FFFFFF;--muted:#EAEBEE;--divider:#E1E3E8;
@@ -145,7 +147,8 @@ p{text-wrap:pretty}
 @media (min-width:1024px){
   :root{--gutter:40px}
   .hero{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:start;padding:48px 0 0}
-  .hero-visual{margin:0 0 0 auto;max-width:480px;padding-bottom:72px}
+  /* Full width up front: sized by its images, it started narrow and jumped when they loaded. */
+  .hero-visual{margin:0 0 0 auto;width:100%;max-width:480px;padding-bottom:72px}
   .hero-visual .shot{width:72%;margin:0 0 0 auto}
   .hero-visual .widget{width:94%}
   .feature{gap:80px;padding-top:112px}
