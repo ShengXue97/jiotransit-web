@@ -80,7 +80,7 @@ p{text-wrap:pretty}
 /* ---------- official store badges ----------
    Apple's SVG and Google's PNG (its clear space trimmed) are both exactly the badge,
    so one height lines them up. */
-.badges{--bh:52px;display:flex;flex-wrap:nowrap;align-items:center;gap:12px}
+.badges{--bh:64px;display:flex;flex-wrap:nowrap;align-items:center;gap:12px}
 .badge{display:block;flex:none}
 .badge img{display:block;height:var(--bh);width:auto}
 /* Phones: the two badges fill the column's width. Columns sized by each badge's
@@ -162,7 +162,7 @@ p{text-wrap:pretty}
 .get h1{font-weight:800;font-size:clamp(36px,8vw,60px);line-height:1.04;letter-spacing:-.03em;margin:0 0 12px}
 .get .lede{font-size:clamp(17px,2.2vw,20px);color:var(--text-2);margin:0 auto 28px;max-width:30em}
 /* The badges are the point of this page: bigger than elsewhere. */
-.get .badges{justify-content:center;--bh:68px;gap:16px}
+.get .badges{justify-content:center;--bh:76px;gap:16px}
 @media (max-width:519px){ .get .badges{margin:0 auto} }
 .get .hero-visual{margin:44px auto 0}
 .qr-card{display:none;align-items:center;gap:16px;margin:28px auto 0;max-width:26em;text-align:left;color:var(--text-2);font-size:15px}
