@@ -6,9 +6,8 @@ MRT routes, and an alert before your stop.
 **Live site:** https://shengxue97.github.io/jiotransit-web/
 
 - [Home](https://shengxue97.github.io/jiotransit-web/)
-- [Download](https://shengxue97.github.io/jiotransit-web/beta/): App Store and Google Play. It keeps the `/beta/`
-  address because old links, QR codes and tinyurl.com/jiobeta point there; it
-  also links the TestFlight and Play testing betas.
+- [Download](https://shengxue97.github.io/jiotransit-web/beta/): App Store and Google Play badges. It keeps the
+  `/beta/` address because old links, QR codes and tinyurl.com/jiobeta point there.
 - [Support](https://shengxue97.github.io/jiotransit-web/support/)
 - [Privacy policy](https://shengxue97.github.io/jiotransit-web/privacy/)
 

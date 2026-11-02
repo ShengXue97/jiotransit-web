@@ -29,60 +29,23 @@
 </header>
 
 <main class="wrap">
-  <section class="beta-intro">
-    <h1>Never miss your stop again.</h1>
-    <p>Live bus timings, MRT routes, and an alert before your stop. Free, no sign-up.</p>
-  </section>
-
-  <div class="segments" role="tablist" aria-label="Your phone">
-    <button role="tab" id="tab-ios" aria-controls="ios" aria-selected="true">iPhone</button>
-    <button role="tab" id="tab-android" aria-controls="android" aria-selected="false">Android</button>
-  </div>
-
-  <section class="trip" id="ios" role="tabpanel" aria-labelledby="tab-ios">
-    <ol class="stops">
-      <li class="stop qr">
-        <span class="dot"></span>
-        <h2>Open this on your phone</h2>
-        <p>Scan with your phone's camera.</p>
+  <section class="hero">
+    <div>
+      <h1>Never miss your stop again.</h1>
+      <p class="lede">Live bus timings, MRT routes, and an alert before your stop. Free on iPhone and Android, no sign-up.</p>
+      <div class="badges">
+        <a class="badge" href="https://apps.apple.com/sg/app/jiotransit-sg-bus-mrt/id6819054000"><img src="https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/black/en-us" width="156" height="52" alt="Download on the App Store"></a>
+        <a class="badge badge-play" href="https://play.google.com/store/apps/details?id=com.nimshade.jiotransit"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" width="199" height="77" alt="Get it on Google Play"></a>
+      </div>
+      <div class="qr-card">
         <img class="qr-img" src="../assets/beta-qr.svg" width="132" height="132" alt="QR code that opens this page">
-      </li>
-      <li class="stop">
-        <span class="dot"></span>
-        <h2>Get it from the App Store</h2>
-        <p>Free, with an optional one-time purchase to remove ads.</p>
-        <a class="btn btn-accent" href="https://apps.apple.com/sg/app/jiotransit-sg-bus-mrt/id6819054000">Open the App Store</a>
-      </li>
-      <li class="stop end">
-        <span class="dot"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 6.3 5 8.7l4.5-5.2"/></svg></span>
-        <h2>You're in</h2>
-        <p>Find a stop, star your buses, and set an alert before your stop.</p>
-      </li>
-    </ol>
-    <p class="hint">Want new features before everyone else? <a href="https://testflight.apple.com/join/M5SRZeEk">Join the iPhone beta</a> on TestFlight.</p>
-  </section>
-
-  <section class="trip" id="android" role="tabpanel" aria-labelledby="tab-android" hidden>
-    <ol class="stops">
-      <li class="stop qr">
-        <span class="dot"></span>
-        <h2>Open this on your phone</h2>
-        <p>Scan with your phone's camera.</p>
-        <img class="qr-img" src="../assets/beta-qr.svg" width="132" height="132" alt="QR code that opens this page">
-      </li>
-      <li class="stop">
-        <span class="dot"></span>
-        <h2>Get it from Google Play</h2>
-        <p>Free, with an optional one-time purchase to remove ads.</p>
-        <a class="btn btn-accent" href="https://play.google.com/store/apps/details?id=com.nimshade.jiotransit">Open Google Play</a>
-      </li>
-      <li class="stop end">
-        <span class="dot"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 6.3 5 8.7l4.5-5.2"/></svg></span>
-        <h2>You're in</h2>
-        <p>Find a stop, star your buses, and set an alert before your stop.</p>
-      </li>
-    </ol>
-    <p class="hint">Want new features before everyone else? Join the <a href="https://groups.google.com/g/jiotransit-testers">tester group</a>, then <a href="https://play.google.com/apps/testing/com.nimshade.jiotransit">become a tester</a>.</p>
+        <p><b>On a computer?</b> Scan with your phone's camera to open this page there.</p>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <img class="shot" src="../assets/ride.webp" width="540" height="1055" alt="On Bus 29 to Changi Village Ter: your stop is next, press the bell now">
+      <img class="widget" src="../assets/getoff.webp" width="900" height="337" alt="Lock screen: get off at Changi Village Ter, 4 stops left">
+    </div>
   </section>
 </main>
 
@@ -92,22 +55,5 @@
     <p>JioTransit is made in Singapore by Sim Sheng Xue (NimShade). Bus times come from LTA DataMall; JioTransit is independent and not affiliated with LTA.</p>
   </div>
 </footer>
-<script>
-(function () {
-  var tabs = document.querySelectorAll('[role="tab"]');
-  function show(id) {
-    tabs.forEach(function (t) {
-      var on = t.getAttribute("aria-controls") === id;
-      t.setAttribute("aria-selected", on);
-      t.tabIndex = on ? 0 : -1;
-      document.getElementById(t.getAttribute("aria-controls")).hidden = !on;
-    });
-  }
-  tabs.forEach(function (t) {
-    t.addEventListener("click", function () { show(t.getAttribute("aria-controls")); });
-  });
-  show(/Android/i.test(navigator.userAgent) ? "android" : "ios");
-})();
-</script>
 </body>
 </html>
