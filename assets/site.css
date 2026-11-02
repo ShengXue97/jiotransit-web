@@ -83,8 +83,13 @@ p{text-wrap:pretty}
 .badges{--bh:52px;display:flex;flex-wrap:nowrap;align-items:center;gap:12px}
 .badge{display:block;flex:none}
 .badge img{display:block;height:var(--bh);width:auto}
-@media (max-width:519px){ .badges{--bh:44px;gap:10px} .cta{padding:32px 20px} }
-@media (max-width:339px){ .badges{flex-wrap:wrap} }
+/* Phones: the two badges fill the column's width. Columns sized by each badge's
+   width:height ratio (119.66:40 and 564:168) keep both exactly the same height. */
+@media (max-width:519px){
+  .badges{display:grid;grid-template-columns:2.9916fr 3.3571fr;gap:10px;max-width:400px}
+  .badge img{width:100%;height:auto}
+  .cta{padding:32px 20px}
+}
 
 /* ---------- app screenshots ---------- */
 .shot{border-radius:28px;border:1px solid var(--shot-border);box-shadow:0 18px 40px -18px rgba(26,32,51,.35);background:var(--surface)}
@@ -158,8 +163,7 @@ p{text-wrap:pretty}
 .get .lede{font-size:clamp(17px,2.2vw,20px);color:var(--text-2);margin:0 auto 28px;max-width:30em}
 /* The badges are the point of this page: bigger than elsewhere. */
 .get .badges{justify-content:center;--bh:68px;gap:16px}
-@media (max-width:519px){ .get .badges{--bh:52px;gap:10px} }
-@media (max-width:379px){ .get .badges{--bh:46px} }
+@media (max-width:519px){ .get .badges{margin:0 auto} }
 .get .hero-visual{margin:44px auto 0}
 .qr-card{display:none;align-items:center;gap:16px;margin:28px auto 0;max-width:26em;text-align:left;color:var(--text-2);font-size:15px}
 .qr-card p{margin:0}
