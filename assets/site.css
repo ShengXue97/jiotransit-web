@@ -77,15 +77,12 @@ p{text-wrap:pretty}
 @media (prefers-color-scheme:dark){ .btn-plate{background:#D7DEEF;color:#1C2A4D} }
 .btn:active{transform:translateY(1px)}
 
-/* ---------- official store badges (served by Apple and Google) ---------- */
-/* --bh is the badge height. Apple's SVG is exactly the badge (119.66 x 40). Google's PNG
-   (646 x 250) has clear space around the badge, which sits at x 41-604, y 41-208: the
-   link box crops to it so both badges are the same height and line up. */
+/* ---------- official store badges ----------
+   Apple's SVG and Google's PNG (its clear space trimmed) are both exactly the badge,
+   so one height lines them up. */
 .badges{--bh:52px;display:flex;flex-wrap:nowrap;align-items:center;gap:12px}
-.badge{display:block;height:var(--bh);overflow:hidden;flex:none}
-.badge img{display:block;height:var(--bh);width:auto;max-width:none}
-.badge-play{width:calc(var(--bh) * 564 / 168)}
-.badge-play img{height:calc(var(--bh) * 250 / 168);margin:calc(var(--bh) * -41 / 168) 0 0 calc(var(--bh) * -41 / 168)}
+.badge{display:block;flex:none}
+.badge img{display:block;height:var(--bh);width:auto}
 @media (max-width:519px){ .badges{--bh:44px;gap:10px} .cta{padding:32px 20px} }
 @media (max-width:339px){ .badges{flex-wrap:wrap} }
 
